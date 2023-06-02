@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Alphabetical Sorting</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #3897f0;
+      border: none;
+      color: #fff;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    p {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Alphabetical Sorting</h1>
+    <input type="text" id="inputString" placeholder="Enter a string">
+    <button onclick="sortString()">Sort</button>
+    <p id="sortedString"></p>
+  </div>
+
+  <script>
+    function sortString() {
+      var inputString = document.getElementById("inputString").value;
+      var sortedString = sortStringLogic(inputString);
+      document.getElementById("sortedString").textContent = "Sorted string: " + sortedString;
+    }
+
+    function sortStringLogic(str) {
+      var sortedArray = Array.from(str).sort();
+      var sortedStr = sortedArray.join('');
+      return sortedStr;
+    }
+  </script>
+</body>
+</html>
